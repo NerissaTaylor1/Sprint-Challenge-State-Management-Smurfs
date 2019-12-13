@@ -9,6 +9,8 @@ store keep track of state is data in one place
 dispatch actions describe  what is happening to the reducer so it know what to update
 
 1. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+application state is global state for all components can use , but component state is local on the component itself
 1. Describe `redux-thunk`, what does it allow us to do? How does it 
 change our `action-creators`?
 
