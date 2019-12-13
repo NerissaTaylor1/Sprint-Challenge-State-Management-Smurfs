@@ -1,37 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { getSmurf } from '../actions/actions';
 
 
-
-const Smurfs = props => {
-    const fetchSmurf = e => {
-        e.preventDefault();
-        props.getSmurf();
-    };
+export default function Smurfs(props) {
+    const { name, age, height, id } = props;
     return (
-        <>
-            <h2>Welcome to SmurfLand!</h2>
-            <div>
-                {props.smurfs && props.smurfs.map(smurf => (
-                    <div key={smurf.id}>
-                        <h4>{smurf.name}</h4>
-                        <p>{smurf.age}</p>
-                        <p>{smurf.height}</p>
-                    </div>
-                )
-                )}
-            </div>
-            <div>
-                {props.error && <p className="error">{props.error}</p>}
-                <button onClick={fetchSmurf}>Fetch Smurf!</button>
-            </div>
-        </>
-    );
-};
-const mapStateToProps = state => ({
-    smurf: state.smurf,
-    error: state.error
-});
-export default connect(
-    mapStateToProps, { getSmurf })(Smurfs);
+        <div>
+            <h2>{props.smurfs.name}</h2>
+            <p>{props.smurfs.age}</p>
+            <p>{props.smurfs.height}</p>
+
+        </div>
+    )
+}

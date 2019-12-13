@@ -1,5 +1,5 @@
 import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_FAILURE, ADD_SMURFS, REMOVE_SMURFS } from "../actions/actions";
-const initialState = {
+export const initialState = {
     smurfs: [{
         name: "",
         age: "",
