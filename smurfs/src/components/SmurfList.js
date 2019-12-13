@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { getSmurf } from '../actions/actions';
-
-
-
 function SmurfList(props) {
     console.log("props.smurfs", props.smurfs)
     const fetchSmurf = e => {
@@ -32,6 +29,7 @@ function SmurfList(props) {
 };
 const mapStateToProps = state => ({
     smurfs: state.smurfs,
+    isFetching: state.isFetching,
     error: state.error
 });
 export default connect(

@@ -25,7 +25,9 @@ export const addSmurf = smurf => dispatch => {
         .then(res => {
             console.log(res.data)
             dispatch({ type: ADD_SMURFS, payload: res.data })
+            dispatch({ type: FETCH_SMURFS_SUCCESS, payload: res.data })
         })
+
         .catch(err => {
             console.log(err);
         });
